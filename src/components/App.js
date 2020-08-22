@@ -6,6 +6,8 @@ import ChooseImage from './ChooseImage';
 import ImgX from '../images/1.png';
 import ImgO from '../images/0.png';
 
+// Hello world!
+
 class App extends React.Component {
   state = {showHeaderBtn: true, showInfo: false, showBoard: false, showImg: false, ref: '', values: {x:[], o:[]}, turn: '', player1Name: '', player2Name: '', winner: '', reset: false};
 
