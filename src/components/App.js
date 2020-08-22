@@ -57,10 +57,16 @@ class App extends React.Component {
   }
 
   checkWinner = (values) => {
+    if (values.x.length >= 3 || values.o.length >= 3) {
       for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
           for (let k = 0; k < 9; k++) {
             if (i !== j && i !== k && j !== k) {
+              if (values.x.length + values.o.length === 9) {
+                this.setState({winner: 'It\'s a draw!'})
+                return;
+              }
+
               if (values.x[i] + values.x[j] + values.x[k] === 15) {
                 this.setState({winner: this.state.player1Name })
                 return;
@@ -75,6 +81,7 @@ class App extends React.Component {
           }
         }
       }
+    }
   }
   
 

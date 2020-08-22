@@ -20,8 +20,10 @@ class Board extends Component {
     if (this.props.winner) {
       if (this.props.winner === this.props.player1Name) {
         message = <p><strong>Game over:</strong> {this.props.player2Name} sucks!</p>;
-      } else {
+      } else if (this.props.winner === this.props.player2Name) {
         message = <p><strong>Game over:</strong> {this.props.player1Name} sucks!</p>;
+      } else {
+        message = <p><strong>Game over:</strong> You both suck!</p>;
       }
     }
 
